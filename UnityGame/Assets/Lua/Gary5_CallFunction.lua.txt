@@ -1,0 +1,49 @@
+
+print("******************Lua调用C# List 相关知识点************************")
+
+Lesson5 = CS.Lesson5
+
+local obj = Lesson5()
+
+--public int RefFun(int a, ref int b, ref int c, int d)
+--ref参数 会以多返回值的形式返回给lua
+--如果函数存在返回值 那么第一个值 就是该返回值
+--之后的返回值 就是ref的结果 从左到右一一对应
+--red参数 需要传入一个默认值 占位置
+--a 相当于函数返回值
+--b 第一个ref
+--c 第二个ref
+local a,b,c =  obj:RefFun(1,0,0,1)
+print(a)
+print(b)
+print(c)
+print("******************************************")
+local a1,b1,c1 =  obj:RefFun(1,1)--这里第二个一 不是d的实参了 而是b的
+print(a1)
+print(b1)
+print(c1)
+print("******************************************")
+--public int OutFun(int a, out int b, out int c, int d)
+--out参数 会以多返回值的形式返回给lua
+--如果函数存在返回值 那么第一个值 就是该返回值
+--之后的返回值 就是ref的结果 从左到右一一对应
+--out参数 不需要传占位置的值
+local a2,b2,c2 = obj:OutFun(20,20)
+print(a2)
+print(b2)
+print(c2)
+print("******************************************")
+--public int RefOutFun(int a, out int b, ref int c)
+--混合使用时 综合上面的规则
+--ref需占位 out不用传
+--第一个是函数的返回值 之后 从左到右依次对应ref或者out
+local a3,b3,c3 = obj:RefOutFun(20,20)
+print(a3)--300
+print(b3)--200
+print(c3)--400
+
+
+
+
+
+

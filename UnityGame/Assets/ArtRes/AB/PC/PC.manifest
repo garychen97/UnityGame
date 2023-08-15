@@ -1,0 +1,14 @@
+ManifestFileVersion: 0
+CRC: 2098156880
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: model
+      Dependencies:
+        Dependency_0: head
+    Info_1:
+      Name: head
+      Dependencies: {}
+    Info_2:
+      Name: lua
+      Dependencies: {}

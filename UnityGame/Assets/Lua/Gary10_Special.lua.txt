@@ -1,0 +1,18 @@
+
+print("******************Lua调用C# 系统类型加特性************************")
+
+
+GameObject = CS.UnityEngine.GameObject
+UI = CS.UnityEngine.UI
+
+local slider = GameObject.Find("Slider")
+print(slider)
+
+local sliderScript = slider:GetComponent(typeof(UI.Slider))
+print(sliderScript)
+
+--如果C#侧不做任何处理 这里会报错 因为系统委托UnityAction<float>没有加CSharpCallLua特性，当然 也无法在这个委托定义处直接加
+--可以通过静态列表加特性
+sliderScript.onValueChanged:AddListener(function(f)
+    print(f)
+end)

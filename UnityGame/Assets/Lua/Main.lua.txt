@@ -1,5 +1,14 @@
 print("主Lua脚本启动")
 
+
+--判断全局函数
+function IsNull(obj)
+    if obj == nil or obj:Equals(nil) then
+        return true
+    end
+    return false;
+end
+
 --Unity中写lua执行
 --xlua帮我们处理
 --只要是执行lua脚本 都会自动的进入我们的重定向函数中找文件
@@ -9,4 +18,22 @@ print("主Lua脚本启动")
 
 --require("Gary2_CallEnum")
 
-require("Gary3_CallArray")
+--require("Gary3_CallArray")
+
+--require("Gary4_CallFunction")
+
+--require("Gary5_CallFunction")
+
+--require("Gary6_CallFunction")
+
+--require("Gary7_CallDel")
+
+--require("Gary8_Special")
+
+--require("Gary9_Special")
+
+--require("Gary10_Special")
+
+--require("Gary11_Coroutine")
+
+--require("Gary12_T")

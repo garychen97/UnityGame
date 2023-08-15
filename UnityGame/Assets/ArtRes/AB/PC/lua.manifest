@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 4108167632
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 63e44b7b37d3d7d3efcbfd5d3bd6ef8d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Lua/Gary10_Special.lua.txt
+- Assets/Resources/Main.lua.txt
+- Assets/Lua/Gary6_CallFunction.lua.txt
+- Assets/Lua/Gary11_Coroutine.lua.txt
+- Assets/Lua/Gary12_T.lua.txt
+- Assets/Lua/Gary7_CallDel.lua.txt
+- Assets/Lua/Gary9_Special.lua.txt
+- Assets/Lua/Gary2_CallEnum.lua.txt
+- Assets/Lua/Gary4_CallFunction.lua.txt
+- Assets/Lua/Gary3_CallArray.lua.txt
+- Assets/Lua/Gary5_CallFunction.lua.txt
+- Assets/Lua/Test.lua.txt
+- Assets/Lua/Main.lua.txt
+- Assets/Lua/Gary1_CallClass.lua.txt
+- Assets/Lua/Gary8_Special.lua.txt
+Dependencies: []

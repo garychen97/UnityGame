@@ -1,0 +1,38 @@
+
+print("******************Lua调用C# 协程相关知识点************************")
+
+--xlua提供的一个工具表
+--一定是需要通过require调用后 才能用
+util = require("xlua.util")
+--C#中协程启动都是通过继承了MonoBehaviour的类里面的启动函数StartCoroutine
+
+GameObject = CS.UnityEngine.GameObject
+WaitForSeconds = CS.UnityEngine.WaitForSeconds
+
+--在场景中挂一个新物体 然后挂一个脚本上去 脚本继承mono 使用它来开启协程
+local obj = GameObject("Coroutine");
+local mono = obj:AddComponent(typeof(CS.LuaCallCSharp))
+
+--希望用来被开启的协程函数
+fun = function()
+    local a = 1
+    while true do
+        --lua中不能直接使用C#中的yield return
+        --就使用lua中的协程返回
+        coroutine.yield(WaitForSeconds(1))
+        print(a)
+        a = a + 1
+        if a > 10 then
+            --停止协程 和C#一样
+            mono:StopCoroutine(b)
+        end
+    end
+end
+
+--我们不能直接将lua函数传入到开启协程中！！！！
+--mono:StartCoroutine(fun)
+
+
+--如果我们要把lua函数当作协程函数传入
+--必须 先调用 xlua.util中的cs_generator(lua)
+b = mono:StartCoroutine(util.cs_generator(fun))
